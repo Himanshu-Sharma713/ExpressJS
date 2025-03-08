@@ -15,6 +15,16 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/profile/:username", (req, res) => {
+  res.send(`<h1> Welcome ${req.params.username} </h1>`);
+});
+
+app.get("/author/:username/:age", (req, res) => {
+  res.send(
+    `<h1> Welcome ${req.params.username}, your age is ${req.params.age}   </h1>`
+  );
+});
+
 app.listen(PORT, () => {
   console.log(`Server Running at http://localhost:${PORT}/`);
 });
